@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de perguntas</title>
     <style>
-
+        body {
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -15,6 +18,12 @@
     <h2>Lista de perguntas</h2>
    <h2> nome : <%= nome %>, profissao: <%=profissao%></h2> 
    <h2>Nome params : <%=nome%>, profissao params : <%=profissao%></h2>
+   <!---->
+    <% if(msg == true) {%>
+    <h3>Usando estrutura condicional if em html</h3>
+    <%}%>
+    }
+   
     
 </body>
 </html>

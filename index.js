@@ -15,9 +15,11 @@ app.get('/', (req,res)=>{
 app.get('/:nome/:profissao', (req,res)=>{
     var nome1 = req.params.nome;
     var profissao1 = req.params.profissao
+    var exibirMsg = true
     res.render("index", {
         nome: nome1,
-        profissao : profissao1
+        profissao : profissao1,
+        msg: exibirMsg
     })
 })
 
