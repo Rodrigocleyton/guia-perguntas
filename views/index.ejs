@@ -18,18 +18,13 @@
     <h2>Lista de perguntas</h2>
    <h2> nome : <%= nome %>, profissao: <%=profissao%></h2> 
    <h2>Nome params : <%=nome%>, profissao params : <%=profissao%></h2>
-   <!---->
-    <% if(msg == true) {%>
-    <h3>Usando estrutura condicional if em html</h3>
-    <%}%>
-    
-   
-    <% if(msg == true) {%>
-        <h3>Usando estrutura condicional if else em html</h3>
-        <%} else {%>
-            <h3>nehum erro!</h3>
-        <%}%>
-        
+
+
+    <% produtos.forEach(function(produto) { %>
+        <hr>
+        <h4><%=produto.nome%></h4> 
+        <h5><%=produto.preco%></h5>
+     <% }) %>   
     
 </body>
 </html>
