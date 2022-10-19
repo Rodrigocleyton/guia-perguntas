@@ -14,6 +14,10 @@ app.get('/', (req,res)=>{
     })
 })
 
+app.get("/perguntar", (req, res)=>{
+    res.render("perguntar")
+})
+
 
 
 
