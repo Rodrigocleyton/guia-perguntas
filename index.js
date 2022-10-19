@@ -2,6 +2,10 @@ const express = require("express")
 const app = express()
 const port =3000
 
+//ejs como view engine
+app.set('view engine', 'ejs');
+//config para usar aequivos estáticos no express(css, imagens, etc)
+app.use(express.static('public'))
 
 app.get('/', (req,res)=>{
     var nome = "rodrigo"
@@ -30,12 +34,12 @@ app.get('/:nome/:profissao', (req,res)=>{
         profissao : profissao1,
         msg: exibirMsg,
         produtos: produtos
+        
     })
 })
 
 
-//ejs como view engine
-app.set('view engine', 'ejs');
+
 
 app.listen(port, ()=>{
     console.log("Servidor no ar na porta ", port)
