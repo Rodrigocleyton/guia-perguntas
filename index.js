@@ -17,6 +17,10 @@ app.get('/', (req,res)=>{
 app.get("/perguntar", (req, res)=>{
     res.render("perguntar")
 })
+//recebe os dados do formulário 
+app.post("/salvarpergunta", (req, res)=>{
+    res.send("formulário recebido")
+})
 
 
 
