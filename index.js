@@ -6,6 +6,15 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
+const connection = require("./database/database")
+//database 
+connection.authenticate().then(()=>{
+    console.log("conectado ao mysql!")
+}).catch((err)=>{
+    console.log("Não conectou ", err)
+})
+
+
 //ejs como view engine
 app.set('view engine', 'ejs');
 //config para usar aequivos estáticos no express(css, imagens, etc)
