@@ -20,3 +20,5 @@ Pergunta.sync({force:false}).then(()=>{
 }).catch((err)=>{
     console.log("Erro, taabela não criada!")
 })
+
+module.exports = Pergunta

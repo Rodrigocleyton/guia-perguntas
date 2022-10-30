@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const port =3000
 
-const perguntaModel = require('./database/Pergunta')
+const Pergunta = require('./database/Pergunta')
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
@@ -35,7 +35,14 @@ app.get("/perguntar", (req, res)=>{
 app.post("/salvarpergunta", (req, res)=>{
     var titulo = req.body.titulo
     var descricao = req.body.descricao
-    res.send(titulo + " " + descricao)
+    //salva no model pergunta
+    Pergunta.create({
+        titulo: titulo,
+        descricao:descricao
+    }).then(()=>{
+        //Após a pergunta rediriciona o usuário para a pag principal
+        res.redirect("/")
+    })
 })
 
 
