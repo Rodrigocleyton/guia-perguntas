@@ -18,7 +18,7 @@ const Pergunta = connection.define('pergunta', {
 Pergunta.sync({force:false}).then(()=>{
     console.log("Tabela criada com sucesso!")
 }).catch((err)=>{
-    console.log("Erro, taabela não criada!")
+    console.log("Erro, taabela não criada!", err)
 })
 
 module.exports = Pergunta
