@@ -22,10 +22,15 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'))
 
 app.get('/', (req,res)=>{
-   
-    res.render("index", {
-      
+    //then recebendo todas as perguntas
+   Pergunta.findAll({raw:true}).then(pergunta=>{
+    //variável perguntas recebendo pergunta(vem do BD) para exibir no front
+    
+    res.render("index",{
+    perguntas:pergunta 
     })
+   })
+    
 })
 
 app.get("/perguntar", (req, res)=>{
