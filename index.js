@@ -54,7 +54,23 @@ app.post("/salvarpergunta", (req, res)=>{
 })
 
 
-
+app.get('/pergunta/:id', (req,res)=>{
+    //recebe um id como parametro
+    var id = req.params.id
+    //busca um parametro específico, id, nome, etc
+    Pergunta.findOne({
+        //onde id é igual ao id digitado como parametro
+        where: {id: id}
+    }).then(pergunta =>{
+        if(pergunta != undefined) {// pergunta achada
+            res.render('pergunta', {
+               pergunta: pergunta 
+            })
+        } else {// não encontrada
+            res.redirect("/")
+        }
+    })
+})
 
 
 app.listen(port, ()=>{
