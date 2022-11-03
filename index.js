@@ -23,7 +23,10 @@ app.use(express.static('public'))
 
 app.get('/', (req,res)=>{
     //then recebendo todas as perguntas
-   Pergunta.findAll({raw:true}).then(pergunta=>{
+   Pergunta.findAll({raw:true, order:[
+    //ordena pelo id decrescente, servetambém para ordem alfabética
+    ['id', 'DESC']
+   ]}).then(pergunta=>{
     //variável perguntas recebendo pergunta(vem do BD) para exibir no front
     
     res.render("index",{
