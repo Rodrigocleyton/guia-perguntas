@@ -3,6 +3,7 @@ const app = express()
 const port =3000
 
 const Pergunta = require('./database/Pergunta')
+const Resposta = require('./database/Resposta')
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
